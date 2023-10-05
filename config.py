@@ -13,7 +13,7 @@ API_HASH = getenv("7517976695e25edcbeb767dbc3fe76c6")
 # Get your toke from @BotFather on Telegram.
 BOT_TOKEN = getenv("6014274844:AAFAgq7VynM1hjHPpZILU2eYg--WC99EDj0") 
 # Get your mongo url from cloud.mongodb.com
-MONGO_DB_URI = getenv("MONGO_DB_URI", mongodb+srv://Kingbrukh:kingkhan@kingbruh.ra3pjgm.mongodb.net/?retryWrites=true&w=majority)
+MONGO_DB_URI = getenv("MONGO_DB_URI", "mongodb+srv://Kingbrukh:kingkhan@kingbruh.ra3pjgm.mongodb.net/?retryWrites=true&w=majority)
 
 DURATION_LIMIT_MIN = int(getenv("DURATION_LIMIT", 60))
 
