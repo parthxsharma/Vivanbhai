@@ -9,7 +9,7 @@ from AnonXMusic import app
 
 
 @app.on_message(filters.command(["ig"], ["/", "!", "."]))
-async def download_instareels(c: bot, m: Message):
+async def download_instareels(c: app, m: Message):
     try:
         reel_ = m.command[1]
     except IndexError:
