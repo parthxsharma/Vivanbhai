@@ -2,13 +2,13 @@ import os
 import asyncio
 from pyrogram import filters
 from pyrogram.types import Message
-from AnonXMusic import bot 
+from AnonXMusic import app
 
 
 # reels download 
 
 
-@bot.on_message(filters.command(["ig"], ["/", "!", "."]))
+@app.on_message(filters.command(["ig"], ["/", "!", "."]))
 async def download_instareels(c: bot, m: Message):
     try:
         reel_ = m.command[1]
