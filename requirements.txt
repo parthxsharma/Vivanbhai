@@ -36,3 +36,4 @@ lexica-api
 httpx
 gpytranslate
 openai==0.28.0
+telethon==1.32.1
