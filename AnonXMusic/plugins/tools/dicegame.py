@@ -1,5 +1,5 @@
 from pyrogram import Client, enums, filters
-#from config import *
+from config import *
 import asyncio
 from AnonXMusic import app as app
 
