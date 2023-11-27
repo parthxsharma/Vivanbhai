@@ -48,13 +48,13 @@ def circle(pfp, size=(500, 500)):
     return pfp
 
 def welcomepic(pic, user, chatname, id, uname):
-    background = Image.open("DAXXMUSIC/assets/bg2.jpg")
+    background = Image.open("AnonXMusic/assets/userinfo.png")
     pfp = Image.open(pic).convert("RGBA")
     pfp = circle(pfp)
     pfp = pfp.resize((450, 450))
     draw = ImageDraw.Draw(background)
-    font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=40)
-    welcome_font = ImageFont.truetype('DAXXMUSIC/assets/font.ttf', size=60)
+    font = ImageFont.truetype('AnonXMusic/assets/font.ttf', size=40)
+    welcome_font = ImageFont.truetype('AnonXMusic/assets/font.ttf', size=60)
     draw.text((30, 300), f'NAME: {user}', fill=(255, 255, 255), font=font)
     draw.text((30, 370), f'ID: {id}', fill=(255, 255, 255), font=font)
     draw.text((30, 40), f"{chatname}", fill=(225, 225, 225), font=welcome_font)
@@ -67,9 +67,9 @@ def welcomepic(pic, user, chatname, id, uname):
 # FUCK you bhosadiwale 
 
 
-@app.on_message(filters.command("wel") & ~filters.private)
+@app.on_message(filters.command("welcome") & ~filters.private)
 async def auto_state(_, message):
-    usage = "**Usage:**\n⦿/wel [on|off]\n➤ᴀᴜʀ ʜᴀᴀɴ ᴋᴀɴɢᴇʀs ᴋᴀʀᴏ ᴀʙ ᴄᴏᴘʏ ʙʜᴏsᴀᴅɪᴡᴀʟᴇ\n➤sᴀʟᴏɴ ᴀᴜʀ ʜᴀᴀɴ sᴛʏʟɪsʜ ғᴏɴᴛ ɴᴏᴛ ᴀʟʟᴏᴡᴇᴅ ɪɴ ᴛʜᴇ ᴛʜᴜᴍʙɴᴀɪʟ.!\ᴀᴜʀ ʜᴀᴀɴ ᴀɢʀ ᴋʜᴜᴅ ᴋɪ ᴋᴀʀɴɪ ʜᴀɪ ᴛᴏ ɢᴀᴀɴᴅ ᴍᴀʀᴀᴏ ʙᴇᴛɪᴄʜᴏᴅ"
+    usage = "**Usage:**\n⦿/welcome [on|off]"
     if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
