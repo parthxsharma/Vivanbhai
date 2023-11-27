@@ -4,7 +4,7 @@ from pyrogram import filters, enums
 from pyrogram.types import InlineKeyboardMarkup, InlineKeyboardButton
 from AnonXMusic.utils.parth_ban import admin_filter
 
-BOT_ID = "6532672373"
+BOT_ID = "6389525713"
 
 @app.on_message(filters.command("unbanall") & admin_filter)
 async def unban_all(_, msg):
