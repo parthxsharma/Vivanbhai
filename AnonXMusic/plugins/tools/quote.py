@@ -294,4 +294,4 @@ async def msg_quotly_cmd(self: app, ctx: Message):
         bio_sticker.name = "misskatyquote_sticker.webp"
         return await ctx.reply_sticker(bio_sticker)
     except Exception as e:
-        return await ctx.reply_msg(f"ERROR: {e}")
+        return await ctx.reply_text(f"ERROR: {e}")
