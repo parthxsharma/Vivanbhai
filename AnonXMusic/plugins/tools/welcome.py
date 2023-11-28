@@ -61,13 +61,13 @@ def welcomepic(pic, user, chatname, id, uname):
     background.save(f"downloads/welcome#{id}.png")
     return f"downloads/welcome#{id}.png"
 
-# FUCK you bhosadiwale 
 
 
 @app.on_message(filters.command("welcome") & ~filters.private)
 async def auto_state(_, message):
     usage = "**Usage:**\n/welcome [on|off]"
-  if len(message.command) == 1:
+  # fuck u babe's 🌝
+if len(message.command) == 1:
         return await message.reply_text(usage)
     chat_id = message.chat.id
     user = await app.get_chat_member(message.chat.id, message.from_user.id)
