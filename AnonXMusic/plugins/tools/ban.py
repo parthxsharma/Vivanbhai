@@ -70,7 +70,7 @@ async def restriction_app(app :app, message):
                     await message.reply(random.choice(strict_txt))          
                 else:
                     await app.ban_chat_member(chat_id, user_id)
-                    await message.reply("Another one bites the dust...! Banned {user.mention}"
+                    await message.reply("Another one bites the dust...! Banned {}"
                                       
                          )
                     
