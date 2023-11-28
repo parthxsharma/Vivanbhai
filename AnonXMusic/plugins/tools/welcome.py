@@ -65,7 +65,7 @@ def welcomepic(pic, user, chatname, id, uname):
 
 @app.on_message(filters.command("welcome") & ~filters.private)
 async def auto_state(_, message):
-    usage = "**Usage:**\n/welcome [on|off]"
+    usage = "**Usage:**\n\n/welcome [on|off]\n\n"
   # fuck u babe's 🌝
 if len(message.command) == 1:
         return await message.reply_text(usage)
