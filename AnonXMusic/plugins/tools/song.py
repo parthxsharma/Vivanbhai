@@ -60,7 +60,7 @@ def song(client, message):
         message.reply_audio(
             audio_file,
             caption=rep,
-            performer=BOT_NAME,
+            performer="AnimexMusic",
             thumb=thumb_name,
             title=title,
             duration=dur,
