@@ -3,7 +3,7 @@ from lexica import Client as ApiClient, AsyncClient
 from pyrogram.types import InlineKeyboardButton
 from math import ceil
 import asyncio
-from AnonXMusic import app
+from DAXXMUSIC import app
 
 
 
@@ -15,10 +15,10 @@ Database = {}
 
 
 
-async def ImageGeneration(model):
+async def ImageGeneration(model,prompt):
     try:
         client = AsyncClient()
-        output = await client.generate(model)
+        output = await client.generate(model,prompt,"")
         if output['code'] != 1:
             return 2
         elif output['code'] == 69:
@@ -32,9 +32,9 @@ async def ImageGeneration(model):
             if resp['code'] == 2:
                 image_url = resp['img_urls']
                 break
-            if tries > 20:
+            if tries > 15:
                 break
-            await asyncio.sleep(1)
+            await asyncio.sleep(5)
             resp = await client.getImages(task_id,request_id)
             tries += 1
             continue
@@ -174,7 +174,7 @@ async def selectModel(_:app,query:t.CallbackQuery):
     promptData = Database.get(auth_user,None)
     if promptData is None:
         return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!.")
-    img_url = await ImageGeneration(modelId['model'])
+    img_url = await ImageGeneration(modelId,promptData['prompt'])
     if img_url is None or img_url == 2 or img_url ==1:
         return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!")
     elif img_url == 69:
@@ -183,7 +183,7 @@ async def selectModel(_:app,query:t.CallbackQuery):
     modelName = [i['name'] for i in Models if i['id'] == modelId]
     for i in img_url:
         images.append(t.InputMediaPhoto(i))
-    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"Your Prompt:\n`{modelId['model']}`")
+    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"Your Prompt:\n`{promptData['prompt']}`")
     await query.message.delete()
     try:
         del Database[auth_user]
@@ -194,4 +194,4 @@ async def selectModel(_:app,query:t.CallbackQuery):
         media=images,
         reply_to_message_id=promptData['reply_to_id']
         
-      )
+    )
