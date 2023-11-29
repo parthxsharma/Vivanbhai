@@ -18,7 +18,7 @@ async def unban_all(_, msg):
             banned_users.append(m.user.id)
             try:
                 await app.unban_chat_member(chat_id, banned_users[x])
-                await msg.reply_text(f"ᴜɴʙᴀɴɪɴɢ ᴀʟʟ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ {m.user.mention}")
+                print(f"ᴜɴʙᴀɴɪɴɢ ᴀʟʟ ɪɴ ᴛʜɪs ɢʀᴏᴜᴘ {m.user.mention}")
                 x += 1
             except Exception:
                 pass
