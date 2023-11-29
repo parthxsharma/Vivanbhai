@@ -15,10 +15,10 @@ Database = {}
 
 
 
-async def ImageGeneration(model,prompt):
+async def ImageGeneration(model):
     try:
         client = AsyncClient()
-        output = await client.generate(model,prompt,"")
+        output = await client.generate(model)
         if output['code'] != 1:
             return 2
         elif output['code'] == 69:
@@ -32,9 +32,9 @@ async def ImageGeneration(model,prompt):
             if resp['code'] == 2:
                 image_url = resp['img_urls']
                 break
-            if tries > 15:
+            if tries > 20:
                 break
-            await asyncio.sleep(5)
+            await asyncio.sleep(1)
             resp = await client.getImages(task_id,request_id)
             tries += 1
             continue
