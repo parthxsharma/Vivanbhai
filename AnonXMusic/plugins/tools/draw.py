@@ -174,7 +174,7 @@ async def selectModel(_:app,query:t.CallbackQuery):
     promptData = Database.get(auth_user,None)
     if promptData is None:
         return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!.")
-    img_url = await ImageGeneration(modelId,promptData['prompt'])
+    img_url = await ImageGeneration(modelId['model'])
     if img_url is None or img_url == 2 or img_url ==1:
         return await query.edit_message_text("sᴏᴍᴇᴛʜɪɴɢ ᴡᴇɴᴛ ᴡʀᴏɴɢ @DevsOops !!")
     elif img_url == 69:
@@ -183,7 +183,7 @@ async def selectModel(_:app,query:t.CallbackQuery):
     modelName = [i['name'] for i in Models if i['id'] == modelId]
     for i in img_url:
         images.append(t.InputMediaPhoto(i))
-    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"Your Prompt:\n`{promptData['prompt']}`")
+    images[-1] = t.InputMediaPhoto(img_url[-1],caption=f"Your Prompt:\n`{modelId['model']}`")
     await query.message.delete()
     try:
         del Database[auth_user]
