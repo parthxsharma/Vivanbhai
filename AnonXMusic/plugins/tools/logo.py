@@ -2,7 +2,7 @@ import glob
 import io
 import os
 import random
-
+import config
 import requests
 from PIL import Image, ImageDraw, ImageFont
 from config import BOT_USERNAME, OWNER_ID, MUSIC_BOT_NAME, SUPPORT_CHAT, telethn
