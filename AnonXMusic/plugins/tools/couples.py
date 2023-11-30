@@ -5,7 +5,7 @@ from pyrogram import filters
 from pyrogram.enums import ChatType
 
 from AnonXMusic import app as pbot
-from AnonXMusic.plugins.mongo import get_couple, save_couple
+from AnonXMusic.mongo.mongo import get_couple, save_couple
 
 
 # Date and time
