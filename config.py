@@ -78,6 +78,7 @@ lyrical = {}
 votemode = {}
 autoclean = []
 confirmer = {}
+telethn = {}
 
 
 START_IMG_URL = getenv(
