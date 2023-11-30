@@ -5,7 +5,7 @@ from telegram.ext import CallbackContext, run_async
 from config import OWNER_ID
 from AnonXMusic import dispatcher
 from AnonXMusic.utils.disable import DisableAbleCommandHandler
-from MukeshRobot.utils.helper_funcs.chat_status import user_admin
+from AnonXMusic.utils.helper_funcs.chat_status import user_admin
 
 # sleep how many times after each edit in 'love'
 EDIT_SLEEP = 1
