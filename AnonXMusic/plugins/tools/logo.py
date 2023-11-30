@@ -5,7 +5,6 @@ import random
 
 import requests
 from PIL import Image, ImageDraw, ImageFont
-from AnonXMusic.plugins.nightmode import button_row
 from config import BOT_USERNAME, OWNER_ID, MUSIC_BOT_NAME, SUPPORT_CHAT, telethn
 from AnonXMusic.events import register
 
